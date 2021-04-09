@@ -1,2 +1,0 @@
-# SpeedTest
-Internet SpeedTest
