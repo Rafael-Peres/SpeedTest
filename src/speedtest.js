@@ -3,7 +3,7 @@
   const testNetworkSpeed = new NetworkSpeed();
   const createCsvWriter = require('csv-writer').createObjectCsvWriter;
   const csvWriter = createCsvWriter({
-    path: 'dataSpeedTest.csv',
+    path: '../storage/dataSpeedTest.csv',
     header: [
         {id: 'velocidade', title: 'VELOCIDADE'},
         {id: 'data', title: 'DATA'},
@@ -19,12 +19,22 @@
     const date = new Date()
     const formattedDate = ((date.getDate() )) + "/" + ((date.getMonth() + 1)) + "/" + date.getFullYear();
     const hours = ((date.getHours() )) + ":" + ((date.getMinutes() + 1))
+    const data = {velocidade: mbps, data: formattedDate, hora: hours}
     const records = [
-      {velocidade: mbps, data: formattedDate, hora: hours}
+      data
     ];
     csvWriter.writeRecords(records);
   }
   setInterval(() => {
     getNetworkDownloadSpeed();
-  }, 2000);
+  }, 3000);
+
+
 })();
+
+function test(){
+  setInterval(() => {
+   getNetworkDownloadSpeed()
+  }, 2000);
+}
+test()

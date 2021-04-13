@@ -1,3 +1,8 @@
 node_modules/
 package-lock.json
-dataSpeedTest.csv
+yarn.lock
+storage/
+yarn-error.log
+/dist
+/release-builds
+/speedtest-linux-x64
